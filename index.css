@@ -1,0 +1,358 @@
+/* Set box-sizing to border-box for all elements */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* Set grid layout for body element */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family:'Cinzel', serif; 
+    cursor: pointer;
+    background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224, 226, 228) 100.2%);
+ 
+  }
+  
+  /* Set max-width to 100% for all media elements */
+  img, picture, svg, video {
+    display: block;
+    max-width: 100%;
+  }
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("images/technology-movies-projector-8mm-film-reel-wallpaper-preview.jpg");
+    background-size: cover;
+    height: 350px;
+    background-position: center;
+    
+    
+}
+
+input{
+  margin-top: 350px;
+  padding: 20px;
+  width: 40%;
+  cursor: pointer;
+  border: none;
+  font-size: 20px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  transition:background-color, 0.15s ;
+}
+
+
+input:hover{
+  background-color: #edeef0;
+ 
+}
+
+.searchbtn{
+  margin-top: 350px;
+  margin-left:1px;
+  padding: 20px;
+  width: 15%;
+  cursor: pointer;
+  border: none;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+   font-size: 20px;
+  color: #374151;
+  background-color: white;
+  transition:  background-color, 0.15s;
+}
+
+.searchbtn:hover{
+  background-color:aqua
+}
+
+@media(max-width:611px){
+  .searchbtn{
+       width: 20%;
+       font-size: 16px;
+  }
+  input{
+    width: 30%;
+    font-size: 16px;
+  }
+}
+
+.titlediv{
+  display: flex;
+  gap: 10px;
+}
+
+.fa-solid{
+  margin-left: 20px;
+  align-self: center;
+  font-size: 20px;
+  cursor: pointer;
+  transition: scale, 0.15s;
+}
+.fa-solid:hover{
+  scale: 1.2;
+}
+
+.add-div{
+display: flex;
+gap: 5px;
+}
+
+
+.addtext{
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.movielistsection {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  grid-gap: 1em;
+  padding: 50px;
+  padding-top: 80px;
+  gap: 45px;
+
+}
+
+.eachfilm {
+  display: grid;
+  grid-template-columns: 300px auto;
+  grid-template-rows: auto auto 1fr;
+  grid-gap: 20px;
+  align-items: start;
+  padding-bottom: 10px;
+  border-bottom:  1.5px solid #c5c8ce
+}
+
+
+
+.filmposterdiv {
+  grid-row: 1 / span 3;
+  margin-right: 20px;
+}
+
+.filmimg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.filminfo {
+  display: grid;
+ grid-template: 1fr/1fr;
+}
+
+.filmtitle {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: justify;
+  color: #000000;
+}
+
+.imdbdiv {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.imdb {
+  font-size: 30px;
+  margin-left: 10px;
+  color: goldenrod
+  
+}
+
+.miniinfo {
+  display: flex;
+  gap: 15px;
+}
+
+.time,
+.ganre {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #111827;
+}
+
+.description {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* or 143% */
+  color: #6B7280;
+}
+
+@media(max-width:670px){
+
+
+
+
+  .movielistsection {
+    
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    gap: 45px;
+  }
+
+  .eachfilm {
+   display: grid;
+    grid-template-columns: 400px;
+    padding: 0;
+   
+  }
+  .filmimg {
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+  }
+
+  .filminfo {
+ display: flex;
+ flex-direction: column;
+ width: 300px;
+}
+}
+
+.startexploaring{
+margin-left: 50%;
+margin-bottom: 0;
+margin-bottom: 242px;
+}
+.exploring{
+align-self: center;
+margin-left: -50px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 20px;
+color: #949191;
+}
+.exploricon{
+  width: 90px;
+  background: #ebe9e9;
+}
+
+footer{
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  color: white;
+  gap: 0;
+  line-height: 0;
+  padding: 20px;
+}
+
+
+.watchlistbtn{
+  position: fixed;
+  right: 0;
+  z-index: 2;
+  padding-right: 15px;
+  border: none;
+  color: #000000;
+  background: none;
+  font-size: 20px;
+  font-weight: bolder;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: scale, 0.15s;
+}
+
+.watchlistbtn:hover{
+  scale: 1.2;
+}
+.watchlistfooter{
+  display: flex;
+  margin-top: 497px;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  color: white;
+  gap: 0;
+  line-height: 0;
+  padding: 20px;
+}
+.homebtn{
+  position: fixed;
+  right: 0;
+  z-index: 2;
+  padding-right: 15px;
+  border: none;
+  color: #000000;
+  background: none;
+  font-size: 20px;
+  font-weight: bolder;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: scale, 0.15s;
+}
+.homebtn:hover{
+  scale: 1.2;
+}
+.watchlisisempty{
+  display: flex;
+  justify-content: center;
+  padding-top: 250px;
+}
+.watchlisemptiinfo{
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 28px;
+text-align: center;
+color: #9c9c9c;
+}
+
+
+.opsinfo{
+  align-self: center;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 20px;
+  color: red;
+}
+
+.watchlisisempty{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  grid-gap: 1em;
+  padding: 50px;
+  padding-top: 80px;
+  gap: 45px;
+}
+.addedgreen{
+  display: none;
+  color: green;
+  font-weight: bolder;
+  font-size: 18px;
+  text-transform:lowercase;
+}
+.fa-circle-minus{
+  
+  justify-self: center;
+  align-self: center;
+  margin-top: 50px;
+  margin-left: 50px;
+  font-size: 25px;
+  color: red;
+  transition: scale 0.15s;
+  
+}
