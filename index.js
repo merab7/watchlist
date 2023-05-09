@@ -12,7 +12,7 @@ const apiKey= `914f3e8d`
 searchBtn.addEventListener('click', async () => {
   
   console.log(inputValue.value)
-  const res = await fetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=${inputValue.value}`);
+  const res = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=${inputValue.value}`);
   const data = await res.json();
   const givenData = data.Search;
   if (!givenData){
@@ -22,7 +22,7 @@ searchBtn.addEventListener('click', async () => {
     </div>`
   }
   const moviePromises = givenData.map(film => {
-    return fetch(`http://www.omdbapi.com/?apikey=${apiKey}&t=${film.Title}`)
+    return fetch(`https://www.omdbapi.com/?apikey=${apiKey}&t=${film.Title}`)
       .then(res => res.json());
   });
   const movies = await Promise.all(moviePromises);
