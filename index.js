@@ -67,23 +67,22 @@ searchBtn.addEventListener('click', async () => {
   // add event listener after the elements have been added to the DOM
   movies.forEach(eachFilm => {
     const addBtn = document.getElementById(eachFilm.imdbID);
-    let isadded=addedFilms.some(film => film.imdbID === eachFilm.imdbID)
-    if (isadded) {
-      document.getElementById(eachFilm.imdbID).innerHTML=`Added ${''} ✅ `
-      document.getElementById(eachFilm.imdbID).style.color='green';
-    }
-
-    else if(!isadded) {
+    let isAdded = addedFilms.some(film => film.imdbID === eachFilm.imdbID);
+    if (isAdded) {
+      document.getElementById(eachFilm.imdbID).innerHTML = 'Added ✅ ';
+      document.getElementById(eachFilm.imdbID).style.color = 'green';
+    } else {
       addBtn.addEventListener('click', () => {
         addedFilms.unshift(eachFilm);
-        document.getElementById(eachFilm.imdbID).innerHTML='Added ✅ ';
-        document.getElementById(eachFilm.imdbID).style.color='green';
-        addBtn
+        document.getElementById(eachFilm.imdbID).innerHTML = 'Added ✅ ';
+        document.getElementById(eachFilm.imdbID).style.color = 'green';
+        addBtn.disabled = true; // Disable the button after it has been clicked
         localStorage.setItem('addedfilm', JSON.stringify(addedFilms));
         renderAddedFilms();
       });
     }
   });
+  
 });
 
 function renderAddedFilms() {
@@ -113,7 +112,7 @@ function renderAddedFilms() {
                   </div>
                   <p class="description">${eachFilm.Plot}</p>
                   <div class="minus-div" >
-                    <button class="removebtn" id="${eachFilm.imdbID}">Remove</button>
+                    <button class="removebtn" id="${eachFilm.imdbID}"> Remove</button>
                   </div>
                 </div>
               </div>`;

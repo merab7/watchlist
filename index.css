@@ -387,7 +387,7 @@ input:hover{
       .addbtn{
         background: none;
         border: none;
-        font-size: 18px;
+        font-size:1.5rem;
         font-weight: bolder;
         cursor: pointer;
         transition: scale, 0.15s;
@@ -411,3 +411,5 @@ input:hover{
       .removebtn:hover{
         scale: 1.2;
       }
+
+    
