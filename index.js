@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
+  addedFilms = JSON.parse(localStorage.getItem('addedfilm')) || [];
   renderAddedFilms();
-  
 });
 const searchBtn = document.getElementById('searchbtn');
 const inputValue= document.getElementById('input')
-const addedFilms=[]
-const apiKey= `914f3e8d`
+
+const apiKey= `914f3e8d` 
 
 
 
@@ -51,8 +51,8 @@ searchBtn.addEventListener('click', async () => {
                
             </div>
             <div class="add-div" >
-            
-            <i class="fa-solid fa-circle-plus" id=${eachFilm.imdbID}> Add </i>
+           
+            <button class="addbtn" id=${eachFilm.imdbID}>  Add </button>
           
             </div>
             </div>
@@ -66,31 +66,25 @@ searchBtn.addEventListener('click', async () => {
 
   // add event listener after the elements have been added to the DOM
   movies.forEach(eachFilm => {
-    const addBtn = document.getElementById(eachFilm.imdbID)
-   
-    if (addBtn) {
-      
-      if (addedFilms.some(film => film.imdbID === eachFilm.imdbID)) {
-       document.getElementById(eachFilm.imdbID).style.display='none' 
-       
-      }
-          addBtn.addEventListener('click', () => {
-          addedFilms.unshift(eachFilm);
-          document.getElementById(eachFilm.imdbID).style.display = 'none';
-          
-          localStorage.setItem('addedfilm', JSON.stringify(addedFilms))
-          renderAddedFilms()
-          
-        });
-           
-      
+    const addBtn = document.getElementById(eachFilm.imdbID);
+    let isadded=addedFilms.some(film => film.imdbID === eachFilm.imdbID)
+    if (isadded) {
+      document.getElementById(eachFilm.imdbID).innerHTML=`Added ${''} ✅ `
+      document.getElementById(eachFilm.imdbID).style.color='green';
     }
-   
+
+    else if(!isadded) {
+      addBtn.addEventListener('click', () => {
+        addedFilms.unshift(eachFilm);
+        document.getElementById(eachFilm.imdbID).innerHTML='Added ✅ ';
+        document.getElementById(eachFilm.imdbID).style.color='green';
+        addBtn
+        localStorage.setItem('addedfilm', JSON.stringify(addedFilms));
+        renderAddedFilms();
+      });
+    }
   });
-  
-
-})
-
+});
 
 function renderAddedFilms() {
 
@@ -119,7 +113,7 @@ function renderAddedFilms() {
                   </div>
                   <p class="description">${eachFilm.Plot}</p>
                   <div class="minus-div" >
-                    <i class="fa-solid fa-circle-minus" id="${eachFilm.imdbID}">Remove</i>
+                    <button class="removebtn" id="${eachFilm.imdbID}">Remove</button>
                   </div>
                 </div>
               </div>`;

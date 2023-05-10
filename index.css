@@ -28,6 +28,8 @@ header{
   background-position: center;
 }
 
+
+
 input{
   margin-top: 21.875rem; /* changed from 350px to rem */
   padding: 1.25rem; /* changed from 20px to rem */
@@ -38,6 +40,7 @@ input{
   border-top-left-radius: 0.5em; /* changed from 8px to em */
   border-bottom-left-radius: 0.5em; /* changed from 8px to em */
   transition: background-color, 0.15s ;
+  box-shadow: 0px 0px 5px black;
 }
 
 input:hover{
@@ -60,6 +63,22 @@ input:hover{
   color: #374151;
   background-color: white;
   transition: background-color, 0.15s;
+  box-shadow: 0px 0px 5px black;
+}
+
+@media(max-width:1130px){
+  header{
+    display: flex;
+    flex-direction: column;
+  }
+  input {
+    margin-top: 15em;
+    border-radius: 8px;
+  }
+  .searchbtn{
+ margin-top:0.3em;
+ border-radius: 8px;
+  }
 }
 
 .searchbtn:hover{
@@ -113,15 +132,20 @@ input:hover{
   padding: 3.125rem; /* 50px ÷ 16px = 3.125rem */
   padding-top: 5rem; /* 80px ÷ 16px = 5rem */
   gap: 2.8125rem; /* 45px ÷ 16px = 2.8125rem */
+  text-shadow: 1px 1px 1px rgb(226, 224, 224);
 }
 
 .eachfilm {
   display: grid;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 0px 10px black;
+  padding: 1em;
   grid-template-columns: 18.75rem auto; /* 300px ÷ 16px = 18.75rem */
   grid-template-rows: auto auto 1fr;
   grid-gap: 1.25rem; /* 20px ÷ 16px = 1.25rem */
   align-items: start;
   padding-bottom: 0.625rem; /* 10px ÷ 16px = 0.625rem */
+  border-radius: 8px;
   border-bottom:  0.09375em solid #c5c8ce; /* 1.5px ÷ 16px = 0.09375em */
 }
 
@@ -166,6 +190,7 @@ input:hover{
 .miniinfo {
   display: flex;
   gap: 0.9375rem; /* 15px ÷ 16px = 0.9375rem */
+  
 }
 
 .time,
@@ -173,9 +198,10 @@ input:hover{
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  font-size: 0.75em; /* 12px ÷ 16px = 0.75em */
+  font-size: 0.9em; /* 12px ÷ 16px = 0.75em */
   line-height: 1.6667rem; /* 20px ÷ 12px ≈ 1.6667rem */
-  color: #111827;
+  color:rgb(218, 123, 34);
+  text-decoration: underline;
 }
 
 .description {
@@ -183,9 +209,11 @@ input:hover{
   font-style: normal;
   font-weight: 400;
   font-size: 0.875;
-  line-height: 1.25rem;
+  line-height: 1.5rem;
   /* or 143% */
-  color: #6B7280;
+  color: #1c1c1c;
+  margin: 0;
+  
 }
 
 @media(max-width:670px){
@@ -197,15 +225,15 @@ input:hover{
     
     display: flex;
     flex-direction: column;
-    padding: 3.125rem;
+    padding: 6.125rem;
     gap: 2.8125rem;
     
   }
 
   .eachfilm {
     display: grid;
-    grid-template-columns: 25rem;
-    padding: 0;
+    grid-template-columns: 15rem;
+    padding: 1em;
     
     }
     .filmimg {
@@ -353,20 +381,33 @@ input:hover{
       }
       }
       
-      .addedgreen{
-      display: none;
-      color: green;
-      font-weight: bolder;
-      font-size: 1.125rem;
-      text-transform: lowercase;
+    
+     
+
+      .addbtn{
+        background: none;
+        border: none;
+        font-size: 18px;
+        font-weight: bolder;
+        cursor: pointer;
+        transition: scale, 0.15s;
       }
-      
-      .fa-circle-minus{
-      justify-self: center;
-      align-self: center;
-      margin-top: 3.125rem;
-      margin-left: 3.125rem;
-      font-size: 1.5625rem;
-      color: red;
-      transition: scale 0.15s;
+       
+      /* .addbtn:hover{
+        scale: 1.2;
+      } */
+
+      .removebtn{
+        background: none;
+        border: none;
+        font-size: 18px;
+        font-weight: bolder;
+        cursor: pointer;
+        margin-top: 4em;
+       text-decoration: underline;
+       color: red;
+       transition: scale, 0.15s;
+      } 
+      .removebtn:hover{
+        scale: 1.2;
       }
