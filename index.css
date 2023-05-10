@@ -74,10 +74,15 @@ input:hover{
   input {
     margin-top: 15em;
     border-radius: 8px;
+    width: 90%;
+    font-size: 1rem;
   }
   .searchbtn{
+  
  margin-top:0.3em;
  border-radius: 8px;
+ width: 30%;
+ font-size: 1rem;
   }
 }
 
@@ -85,16 +90,7 @@ input:hover{
   background-color: aqua;
 }
 
-@media(max-width:611px){
-  .searchbtn{
-    width: 20%;
-    font-size: 1rem; /* changed from 16px to rem */
-  }
-  input{
-    width: 30%;
-    font-size: 1rem; /* changed from 16px to rem */
-  }
-}
+
 
 
 .titlediv {
@@ -252,7 +248,7 @@ input:hover{
     }
     
     .startexploaring{
-    margin-left: 50%;
+    margin-left: 48%;
     margin-bottom: 0;
     margin-bottom: 15.125rem;
     }
@@ -336,6 +332,7 @@ input:hover{
       display: flex;
       justify-content: center;
       padding-top: 15.625rem;
+      
     }
     
     .watchlisemptiinfo{
@@ -373,14 +370,21 @@ input:hover{
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
       grid-gap: 1em;
-      padding: 3.125rem;
+      padding: 2.125rem;
       padding-top: 5rem;
       gap: 2.8125rem;
       }
       
       .homebtn{
-      padding-right: 4.0625rem;
+      padding-right: 0.5625rem;
       }
+      .startexploaring{
+        margin-left: 39%;
+        margin-bottom: 0;
+        margin-bottom: 15.125rem;
+        }
+
+
       }
       
     
