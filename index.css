@@ -223,11 +223,13 @@ input:hover{
 
   .movielistsection {
     
-    display: flex;
-    flex-direction: column;
-    padding: 6.125rem;
-    gap: 2.8125rem;
-    
+   display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr));
+      grid-gap: 1em;
+      padding: 3.125rem;
+      padding-top: 5rem;
+      gap: 2.8125rem;
+      justify-content: center;
   }
 
   .eachfilm {
